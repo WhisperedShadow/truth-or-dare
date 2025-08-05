@@ -79,3 +79,45 @@
   border-top: 1px solid #ddd;
   animation: fadeIn var(--transition-slow) ease-in-out;
 }
+
+/* ---------- Mobile Styles ---------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    margin-top: 2rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+
+  /* Features Section */
+  .features {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .featureCard {
+    padding: 1rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+}

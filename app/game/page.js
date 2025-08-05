@@ -61,7 +61,9 @@ Rules:
 6. Avoid repetitive or generic phrases.
 7. Ensure it sounds like a challenge or question suitable for ${method}.
 8. No greetings, no filler words, no disclaimers.
+9. If ${method} is "Truth", ask a question that is interesting and engaging Don't make him/her do something .
 10. If ${method} is "Dare", Don't ask him questions give him a small challenge he/she can do.
+11. Don't use the word "truth" or "dare" in the response.
 
 Now provide the ${method} in exactly one sentence.
 `;
