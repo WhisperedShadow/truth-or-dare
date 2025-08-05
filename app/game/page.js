@@ -10,6 +10,7 @@ export default function Home() {
   const [player, setPlayer] = useState({});
   const [response, setResponse] = useState("");
   const [type, setType] = useState("Friends");
+  const [loading, setLoading] = useState(false); // 🆕 Loading state
 
   useEffect(() => {
     const storedPlayers = JSON.parse(localStorage.getItem("players")) || [];
@@ -38,6 +39,9 @@ export default function Home() {
       return;
     }
 
+    setLoading(true); // 🆕 Show spinner
+    setResponse(""); // Clear old response
+
     const prompt = `
 You are creating a ${method} challenge for a Truth or Dare game.
 
@@ -57,6 +61,7 @@ Rules:
 6. Avoid repetitive or generic phrases.
 7. Ensure it sounds like a challenge or question suitable for ${method}.
 8. No greetings, no filler words, no disclaimers.
+10. If ${method} is "Dare", Don't ask him questions give him a small challenge he/she can do.
 
 Now provide the ${method} in exactly one sentence.
 `;
@@ -82,6 +87,8 @@ Now provide the ${method} in exactly one sentence.
     } catch (error) {
       console.error("Error fetching response:", error);
       setResponse("An error occurred while generating the response.");
+    } finally {
+      setLoading(false); // 🆕 Hide spinner
     }
   };
 
@@ -112,7 +119,11 @@ Now provide the ${method} in exactly one sentence.
       <div className={Styles.container}>
         <div className={Styles.msg}>
           <h2>{player.name || "No player selected"}</h2>
-          <p>{response || "Press Truth or Dare to start!"}</p>
+          {loading ? ( // 🆕 Show spinner while loading
+            <div className={Styles.spinner}></div>
+          ) : (
+            <p>{response || "Press Truth or Dare to start!"}</p>
+          )}
         </div>
 
         <div className={Styles.btns}>
@@ -125,12 +136,14 @@ Now provide the ${method} in exactly one sentence.
           <button
             className={Styles.btnTruth}
             onClick={() => fetchResponse("Truth")}
+            disabled={loading} // 🆕 Disable while loading
           >
             Truth
           </button>
           <button
             className={Styles.btnDare}
             onClick={() => fetchResponse("Dare")}
+            disabled={loading} // 🆕 Disable while loading
           >
             Dare
           </button>
