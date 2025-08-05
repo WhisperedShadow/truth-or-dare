@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* ---------- PAGE STYLES ---------- */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+  animation: fadeIn var(--transition-medium);
+}
+
+.type {
+  display: flex;
+  justify-content: center;
+}
+
+.type select {
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background: white;
+  color: var(--color-text);
+  box-shadow: var(--shadow-soft);
+  transition: var(--transition-fast);
+}
+
+.type select:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-medium);
+}
+
+/* ---------- GAME CONTAINER ---------- */
+.container {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-medium);
+  text-align: center;
+  animation: scaleUp var(--transition-medium);
+}
+
+.msg h2 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.msg p {
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.4;
+}
+
+/* ---------- BUTTONS ---------- */
+.btns {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btnPrimary,
+.btnTruth,
+.btnDare {
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: var(--shadow-soft);
+}
+
+.btnPrimary {
+  background-color: var(--color-primary);
+}
+
+.btnPrimary:hover {
+  background-color: var(--color-primary-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btnTruth {
+  background-color: var(--color-success);
+}
+
+.btnTruth:hover {
+  background-color: #3d8c40;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btnDare {
+  background-color: var(--color-danger);
+}
+
+.btnDare:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}

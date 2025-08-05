@@ -1,0 +1,123 @@
+.wrapper {
+  position: relative;
+}
+
+/* Settings Button */
+.settingsButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 0.6rem 1rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+  transition: background var(--transition-fast),
+    transform var(--transition-fast);
+}
+.settingsButton:hover {
+  background: var(--color-primary-light);
+  transform: scale(1.05);
+}
+
+/* Settings Panel */
+.settingsContainer {
+  position: fixed;
+  top: 4.5rem;
+  right: 1rem;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  padding: 1.5rem;
+  width: 300px;
+  animation: fadeIn var(--transition-medium) ease-in-out;
+  z-index: 10;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  text-align: center;
+}
+
+/* Player List */
+.playersList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.player {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-bg);
+  padding: 0.5rem 0.8rem;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-soft);
+  animation: scaleUp var(--transition-medium) ease-in-out;
+}
+
+.playerName {
+  font-weight: bold;
+}
+
+.playerGender {
+  font-size: 0.9rem;
+  color: #777;
+}
+
+/* Edit & Delete Buttons */
+.editBtn,
+.deleteBtn {
+  background: transparent;
+  padding: 0.3rem;
+  transition: transform var(--transition-fast);
+}
+
+.editBtn i {
+  color: var(--color-primary);
+}
+
+.deleteBtn i {
+  color: var(--color-danger);
+}
+
+.editBtn:hover,
+.deleteBtn:hover {
+  transform: scale(1.2);
+}
+
+/* Add Player Form */
+.addPlayer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.addPlayer input,
+.addPlayer select {
+  padding: 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.addBtn {
+  background: var(--color-success);
+  color: white;
+  padding: 0.5rem;
+  border-radius: var(--radius-md);
+  font-weight: bold;
+  transition: background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.addBtn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
