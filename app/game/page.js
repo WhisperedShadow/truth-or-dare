@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 export default function Home() {
   const api_url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${process.env.NEXT_PUBLIC_API_KEY}`;
-
+  const [prev, setPrev]=useState({})
   const [players, setPlayers] = useState([]);
   const [player, setPlayer] = useState({});
   const [response, setResponse] = useState("");
@@ -29,7 +29,11 @@ export default function Home() {
       setResponse("No players available. Add players in settings.");
       return;
     }
-    const randomIndex = Math.floor(Math.random() * playersList.length);
+    let randomIndex = Math.floor(Math.random() * playersList.length);
+    setPrev(player)
+    while(playersList[randomIndex].name==prev.name){
+      randomIndex = Math.floor(Math.random() * playersList.length);
+    }
     setPlayer(playersList[randomIndex]);
     setResponse("");
   };
@@ -42,7 +46,7 @@ export default function Home() {
     if (method == "Truth"){
       setCount(c => c + 1);
       if(count >=3){
-        setResponse("You have already answered 3 truths. Please choose Dare or select a new player.");
+        setResponse("3 Consecutive Truths. Choose Dare ");
         return;
       }
     }else if (method == "Dare"){
