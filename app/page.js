@@ -7,33 +7,41 @@ export default function Home() {
       {/* ---------- Hero Section ---------- */}
       <header className={styles.hero}>
         <h1 className={styles.title}>
-          Welcome to <span className={styles.highlight}>Truth & Dare</span>
+          Welcome to <span className={styles.highlight}>Reveal or Risk</span>
         </h1>
         <p className={styles.subtitle}>
-          Play fun and challenging Truth or Dare questions with friends! 🎯
+          Fun, challenging, and local-only Truth or Dare experience for you and your friends 🎯
         </p>
-        <Link className={styles.ctaButton} href="/game">Start Playing</Link>
       </header>
 
-      {/* ---------- Features Section ---------- */}
-      <section className={styles.features}>
-        <div className={styles.featureCard}>
-          <h3>🤝 Multiplayer Fun</h3>
-          <p>Connect with friends and enjoy endless challenges together.</p>
+      {/* ---------- Game Modes Section ---------- */}
+      <section className={styles.gameModes}>
+        <div className={styles.modeCard}>
+          <h2>🎲 Random Picker</h2>
+          <p>
+            Randomly select an <strong>Asker</strong> and an <strong>Answerer</strong> from your player list.  
+            Perfect for quick starts and fair play!
+          </p>
+          <Link className={styles.ctaButton} href="/random">
+            Start Picker
+          </Link>
         </div>
-        <div className={styles.featureCard}>
-          <h3>🎯 Random Challenges</h3>
-          <p>Get unexpected and exciting dares or truths every time.</p>
-        </div>
-        <div className={styles.featureCard}>
-          <h3>⚡ Fast & Simple</h3>
-          <p>Start playing instantly without complicated setup.</p>
+
+        <div className={styles.modeCard}>
+          <h2>🤖 AI Truth or Dare</h2>
+          <p>
+            Let AI pick a random player and give them a challenging Truth or Dare question.  
+            Play locally with friends — no online multiplayer.
+          </p>
+          <Link className={styles.ctaButton} href="/game">
+            Start Game
+          </Link>
         </div>
       </section>
 
       {/* ---------- Footer ---------- */}
       <footer className={styles.footer}>
-        <p>© {new Date().getFullYear()} Truth & Dare | Built with ❤️</p>
+        <p>© {new Date().getFullYear()} Reveal or Risk | Built with ❤️</p>
       </footer>
     </div>
   );

@@ -11,6 +11,7 @@ export default function Home() {
   const [response, setResponse] = useState("");
   const [type, setType] = useState("Friends");
   const [loading, setLoading] = useState(false); // 🆕 Loading state
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const storedPlayers = JSON.parse(localStorage.getItem("players")) || [];
@@ -38,6 +39,15 @@ export default function Home() {
       setResponse("Please select a player first.");
       return;
     }
+    if (method == "Truth"){
+      setCount(c => c + 1);
+      if(count >=3){
+        setResponse("You have already answered 3 truths. Please choose Dare or select a new player.");
+        return;
+      }
+    }else if (method == "Dare"){
+      setCount(0);
+    }
 
     setLoading(true); // 🆕 Show spinner
     setResponse(""); // Clear old response
@@ -64,6 +74,7 @@ Rules:
 9. If ${method} is "Truth", ask a question that is interesting and engaging Don't make him/her do something .
 10. If ${method} is "Dare", Don't ask him questions give him a small challenge he/she can do.
 11. Don't use the word "truth" or "dare" in the response.
+12. We are playing in pysical location, So don't give dare which can only done by remotely.
 
 Now provide the ${method} in exactly one sentence.
 `;

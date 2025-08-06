@@ -1,0 +1,82 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-lg);
+  animation: fadeIn var(--transition-medium);
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.playersContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.playerCard {
+  flex: 1;
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  box-shadow: var(--shadow-medium);
+  animation: scaleUp var(--transition-medium);
+}
+
+.playerCard h3 {
+  margin: 0;
+  color: var(--color-secondary);
+}
+
+.playerCard p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-top: 0.5rem;
+}
+
+.randomButton {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: var(--radius-md);
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.randomButton:hover {
+  background-color: var(--color-primary-light);
+  transform: scale(1.02);
+}
+
+.randomButton:active {
+  transform: scale(0.98);
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .playersContainer {
+    flex-direction: column;
+  }
+
+  .playerCard {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+}
